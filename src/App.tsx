@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import FilterComponent from "./components/filterComponent";
-import { useProductsQuery } from "./services/products";
+import { useProductsQuery } from "./features/product/productsApi";
 
 function App() {
   const { data, isLoading, isSuccess } = useProductsQuery();
@@ -9,10 +9,10 @@ function App() {
   const [querry, SetQuerry] = useState("");
   const [state, setState] = useState<string[]>([]);
   console.log("state", state);
+  console.log("isSuccess", isSuccess);
 
-  {
-    /* Search Input */
-  }
+  //! Search Input
+
   let filteredProduct = data
     ?.filter((val: any) => {
       if (querry === "") {
@@ -43,6 +43,10 @@ function App() {
     }
   };
 
+  const addToCart = (product: any) => {
+    console.log("product from AppJs", { ...product, count: 1 });
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -54,12 +58,18 @@ function App() {
         />
         <FilterComponent handleChange={handleChange} />
         {isLoading && "Loading..."}
-        {filteredProduct?.map((product: any) => (
-          <div>
-            <span>{product?.title}</span>
-            <img src={product.image} alt="image" style={{ width: "100px" }} />
-          </div>
-        ))}
+        {isSuccess &&
+          filteredProduct?.map((product: any) => (
+            <div>
+              <span>{product?.title}</span>
+              <img
+                src={product?.image}
+                alt={product?.title}
+                style={{ width: "100px" }}
+              />
+              <button onClick={() => addToCart(product)}>Add To Cart</button>
+            </div>
+          ))}
       </header>
     </div>
   );

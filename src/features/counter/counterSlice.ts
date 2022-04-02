@@ -2,20 +2,17 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState, AppThunk } from "../../app/store";
 import { fetchCount } from "./counterAPI";
 
-export interface Basket {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: Rating;
-}
+// export interface Basket {
+//   id: number;
+//   title: string;
+//   price: number;
+//   description: string;
+//   category: string;
+//   image: string;
+//   rating: Rating;
+// }
 
-export interface Rating {
-  rate: number;
-  count: number;
-}
+
 export interface CounterState {
   value: number;
   status: "idle" | "loading" | "failed";

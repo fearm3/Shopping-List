@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { useProductsQuery } from "../services/products";
+import { useProductsQuery } from "../features/product/productsApi";
 
 const FilterComponent = ({ handleChange }: any) => {
   const { data, isLoading, isSuccess } = useProductsQuery();
-  console.log("data", data);
+  console.log("data from filterComp.", data);
 
   const filteredCategory = data
     ?.map((item) => item.category)
@@ -22,12 +21,10 @@ const FilterComponent = ({ handleChange }: any) => {
                 type="checkbox"
                 id={`custom-checkbox-${index}`}
                 onChange={handleChange}
-                /* name={item}*/
                 value={item}
               />
               <label htmlFor={`custom-checkbox-${index}`}>{item}</label>
             </div>
-            <div className="right-section"></div>
           </div>
         );
       })}

@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { Basket } from "../features/counter/counterSlice";
+import { Basket } from "./productSlice";
 
 export const productsApi = createApi({
-  reducerPath: "products",
+  reducerPath: "productsApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://fakestoreapi.com/",
   }),
