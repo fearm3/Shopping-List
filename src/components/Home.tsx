@@ -40,16 +40,16 @@ function Home() {
         return state.includes(x.category);
       }
     })
-    // .sort((a: any, b: any) => {
-    //   if (sorted === "") {
-    //     return true;
-    //   } else if (sorted === "Highest price") {
-    //     return a.price > b.price ? -1 : 1;
-    //   } else if (sorted === "Lowest price") {
-    //     return b.price > a.price ? -1 : 1;
-    //   }
-    //   return true;
-    // });
+    .sort((a: any, b: any) => {
+      if (sorted === "") {
+        return true;
+      } else if (sorted === "Highest price") {
+        return a.price > b.price ? -1 : 1;
+      } else if (sorted === "Lowest price") {
+        return b.price > a.price ? -1 : 1;
+      }
+      return true;
+    });
 
   //! Sort
   const handleSort = (e: any) => {
