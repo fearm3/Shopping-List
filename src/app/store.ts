@@ -6,6 +6,8 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import productReducer from "../features/product/productSlice";
 
 export const store = configureStore({
+
+
   reducer: {
     product: productReducer,
 
@@ -16,6 +18,7 @@ export const store = configureStore({
 });
 
 setupListeners(store.dispatch);
+
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

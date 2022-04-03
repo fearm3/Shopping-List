@@ -73,7 +73,6 @@ function Home() {
 
   return (
     <div className="container">
-      {/* <Filter handleChange={handleChange} /> */}
       <div className="search-input">
         <input
           type="text"
@@ -82,6 +81,9 @@ function Home() {
           placeholder="Search..."
         />
       </div>
+
+      <h3>Select Category</h3>
+      <Filter handleChange={handleChange} />
 
       <Sort handleSort={handleSort} />
 
