@@ -1,68 +1,16 @@
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../css/Navbar.css";
-import { useProductsQuery } from "../features/product/productsApi";
-import Filter from "./Filter";
 
 const Navbar = () => {
-  const { data } = useProductsQuery();
-  const [querry, SetQuerry] = useState("");
-  const [state, setState] = useState<string[]>([]);
-  const [sorted, setSorted] = useState("");
   const { cartTotalQuantity } = useSelector((state: any) => state.product);
 
-  let filteredProduct = data
-    // eslint-disable-next-line array-callback-return
-    ?.filter((val: any) => {
-      if (querry === "") {
-        return true;
-      } else if (querry.length === 1) {
-        return true;
-      } else if (
-        querry.length > 1 &&
-        val?.title.toLocaleLowerCase().includes(querry.toLowerCase())
-      ) {
-        return true;
-      }
-    })
-    .filter((x: any) => {
-      if (!state.length) {
-        return true;
-      } else {
-        return state.includes(x.category);
-      }
-    });
-  // .sort((a: any, b: any) => {
-  //   if (sorted === "") {
-  //     return true;
-  //   } else if (sorted === "Highest price") {
-  //     return a.price > b.price ? -1 : 1;
-  //   } else if (sorted === "Lowest price") {
-  //     return b.price > a.price ? -1 : 1;
-  //   }
-  //   return true;
-  // });
-
-  //! Sort
-  const handleSort = (e: any) => {
-    setSorted(e.target.value);
-  };
-  const handleChange = (e: any) => {
-    console.log(e.target.value);
-    if (state.includes(e.target.value)) {
-      setState(state.filter((x) => x !== e.target.value));
-    } else {
-      setState([...state, e.target.value]);
-    }
-  };
   return (
     <nav className="nav-bar">
       <Link to="/">
-        <h2>Shopping Online Market </h2>
+        <h2>fearm3's Online Market </h2>
       </Link>
 
-      {/* <Filter handleChange={handleChange} /> */}
       <Link to="/cart">
         <div className="nav-basket">
           <svg

@@ -1,13 +1,6 @@
 import "../css/Sort.css";
 
-// import { useProductsQuery } from "../features/product/productsApi";
 const Sort = ({ handleSort }: any) => {
-  // const { data } = useProductsQuery();
-
-  // const sortedProduct= ()=>{
-
-  // }
-
   return (
     <div>
       <div className="list-item">
