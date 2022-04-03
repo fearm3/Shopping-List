@@ -21,17 +21,29 @@
 }
 
 .list-item button {
+  width: 100px;
+  height: 50px;
+  font-size: 1.1rem;
   margin-left: 5px;
-  border-radius: 5px;
+  border-radius: 1.5rem;
   background: green;
   color: aliceblue;
+  cursor: pointer;
 }
 
 .list-item button:last-child {
   background-color: red;
 }
 
+.list-item button:last-child:hover {
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  opacity: 0.72;
+}
+
 .list-item button:hover {
-  cursor: pointer;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  opacity: 0.72;
 }
 /*# sourceMappingURL=Sort.css.map */

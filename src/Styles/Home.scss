@@ -89,9 +89,17 @@
         border: none;
         outline: none;
         letter-spacing: 1px;
+        // background-color: #db1f48;
+        // color: #fff;
+        transition: background-color 0.7s;
 
         &:hover {
-          cursor: pointer;
+          background-color: green;
+        }
+        &:focus,
+        &:active {
+          background-color: blue;
+          transition: 1s;
         }
       }
     }

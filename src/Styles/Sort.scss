@@ -14,16 +14,26 @@
   margin-top: 10px;
 
   button {
+    width: 100px;
+    height: 50px;
+    font-size: 1.1rem;
     margin-left: 5px;
-    border-radius: 5px;
+    border-radius: 1.5rem;
     background: green;
     color: aliceblue;
+    cursor: pointer;
 
     &:last-child {
       background-color: red;
+
+      &:hover {
+        transition: 0.7s;
+        opacity: 0.72;
+      }
     }
     &:hover {
-      cursor: pointer;
+      transition: 0.7s;
+      opacity: 0.72;
     }
   }
 }

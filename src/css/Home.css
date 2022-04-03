@@ -117,9 +117,17 @@
   border: none;
   outline: none;
   letter-spacing: 1px;
+  -webkit-transition: background-color 0.7s;
+  transition: background-color 0.7s;
 }
 
 .container .products .product button:hover {
-  cursor: pointer;
+  background-color: green;
+}
+
+.container .products .product button:focus, .container .products .product button:active {
+  background-color: blue;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 /*# sourceMappingURL=Home.css.map */
