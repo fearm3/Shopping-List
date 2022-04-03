@@ -1,6 +1,7 @@
-import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
+import "../css/Cart.css";
 
 const Cart = () => {
   const product = useSelector((state: any) => state.product);
@@ -14,15 +15,15 @@ const Cart = () => {
             <Link to="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="25"
-                height="25"
+                width="16"
+                height="16"
                 fill="currentColor"
-                className="bi bi-arrow-return-left"
+                className="bi bi-arrow-left"
                 viewBox="0 0 16 16"
               >
                 <path
                   fillRule="evenodd"
-                  d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"
+                  d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
                 />
               </svg>
               <span>Start Shopping</span>
@@ -31,7 +32,7 @@ const Cart = () => {
         </div>
       ) : (
         <div>
-          <div className="titles">
+          <div className="titles grid">
             <h3 className="product-title">Product</h3>
             <h3 className="price">Price</h3>
             <h3 className="quantity">Quantity</h3>
@@ -39,9 +40,13 @@ const Cart = () => {
           </div>
           <div className="cart-items">
             {product.cartItems?.map((cartItem: any) => (
-              <div className="cart-item" key={cartItem.id}>
+              <div className="cart-item grid" key={cartItem.id}>
                 <div className="cart-product">
-                  <img src={cartItem.image} alt={cartItem.title} />
+                  <img
+                    className="image"
+                    src={cartItem.image}
+                    alt={cartItem.title}
+                  />
                   <div>
                     <h3>{cartItem.title}</h3>
                     <p>{cartItem.description}</p>
@@ -61,15 +66,17 @@ const Cart = () => {
             ))}
           </div>
           <div className="cart-summary">
-            <button className="clear-cart"></button>
+            <button className="clear-cart">Clear Cart</button>
             <div className="cart-checkout">
               <div className="subtotal">
                 <span>Subtotal</span>
                 <span className="amount">{product.cartTotalAmount}</span>
               </div>
+              <p>Includes taxes</p>
               <button>Checkout</button>
               <div className="continue-shopping">
                 <Link to="/">
+                  <span>Continue Shopping</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="25"
@@ -83,7 +90,6 @@ const Cart = () => {
                       d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"
                     />
                   </svg>
-                  <span>Continue Shopping</span>
                 </Link>
               </div>
             </div>

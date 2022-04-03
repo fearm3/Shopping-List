@@ -10,7 +10,6 @@
   .list-item {
     display: inline-block;
     color: white;
-  
 
     .filter-section {
       display: flex;
@@ -44,9 +43,6 @@
         cursor: pointer;
         outline: none;
       }
-    }
-    label {
-      // border: 1px solid red;
     }
   }
 }
