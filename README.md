@@ -1,4 +1,4 @@
-[Project](https://react-task-momentup-development.netlify.app) | [Demo](https://github.com/fearm3/Shopping-List)
+[Project](https://github.com/fearm3/Shopping-List) | [Demo](https://shopping-list-feux.netlify.app/)
 
 ## TypeScript
 
