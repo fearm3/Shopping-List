@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", "sans-serif";
+}
+
+.list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+}
+
+.list-item button {
+  margin-left: 5px;
+  border-radius: 5px;
+  background: green;
+  color: aliceblue;
+}
+
+.list-item button:last-child {
+  background-color: red;
+}
+
+.list-item button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=Sort.css.map */

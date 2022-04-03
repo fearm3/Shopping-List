@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", "sans-serif";
+}
+
+.filter .list-item {
+  display: inline-block;
+  color: white;
+}
+
+.filter .list-item .filter-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filter .list-item input[type="checkbox"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  /* create custom checkbox appearance */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 25px;
+  height: 25px;
+  padding: 6px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 1.5px solid #bbbbbb;
+  border-radius: 6px;
+  background-color: #5e1929;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+.filter .list-item input[type="checkbox"]:checked {
+  background-color: #ff0000;
+}
+
+.filter .list-item input[type="checkbox"]:focus {
+  cursor: pointer;
+  outline: none;
+}
+/*# sourceMappingURL=Filter.css.map */

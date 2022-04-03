@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", "sans-serif";
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+
+  button {
+    margin-left: 5px;
+    border-radius: 5px;
+    background: green;
+    color: aliceblue;
+
+    &:last-child {
+      background-color: red;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

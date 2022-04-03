@@ -1,29 +1,31 @@
+import "../css/Filter.css";
 import { useProductsQuery } from "../features/product/productsApi";
 
-const FilterComponent = ({ handleChange }: any) => {
-  const { data, isLoading, isSuccess } = useProductsQuery();
-  console.log("data from filterComp.", data);
+const Filter = ({ handleChange }: any) => {
+  const { data } = useProductsQuery();
+  console.log("data from filter", data);
 
   const filteredCategory = data
     ?.map((item) => item.category)
     .filter((value, index, self) => self.indexOf(value) === index);
 
-  console.log(filteredCategory);
+  console.log("filteredCategory", filteredCategory);
 
   return (
-    <div className="App">
-      <h3>Select Toppings</h3>
+    <div className="filter">
       {filteredCategory?.map((item, index) => {
         return (
-          <div className="toppings-list-item" key={index}>
-            <div className="left-section">
+          <div className="list-item" key={index}>
+            <div className="filter-section">
               <input
                 type="checkbox"
                 id={`custom-checkbox-${index}`}
                 onChange={handleChange}
                 value={item}
               />
-              <label htmlFor={`custom-checkbox-${index}`}>{item}</label>
+              <label htmlFor={`custom-checkbox-${index}`}>
+                {item.toUpperCase()}
+              </label>
             </div>
           </div>
         );
@@ -32,4 +34,4 @@ const FilterComponent = ({ handleChange }: any) => {
   );
 };
 
-export default FilterComponent;
+export default Filter;

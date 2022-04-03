@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto", "sans-serif";
+}
+
+.nav-bar {
+  height: 80px;
+  background: #190303;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+}
+
+.nav-bar a {
+  text-decoration: none;
+}
+
+.nav-bar h2 {
+  font-size: 30px;
+  color: #a77518;
+  font-weight: 700;
+}
+
+.nav-bar .nav-basket {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #329d8f;
+}
+
+.nav-bar .shop-quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: orange;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+  margin-left: 1rem;
+}
+
+.nav-bar .shop-quantityhover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=Navbar.css.map */

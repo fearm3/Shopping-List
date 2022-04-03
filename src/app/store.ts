@@ -4,12 +4,13 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import { productsApi } from "../features/product/productsApi";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import productReducer from "../features/product/productSlice";
-// import { getDefaultSettings } from "http2";
+// import cartReducer from "../features/cart/cartSlice";
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     product: productReducer,
+    // cart: cartReducer,
     [productsApi.reducerPath]: productsApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
