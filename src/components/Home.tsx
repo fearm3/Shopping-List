@@ -8,6 +8,7 @@ import { useProductsQuery } from "../features/product/productsApi";
 import Sort from "./Sort";
 import "../css/Home.css";
 import { useSelector } from "react-redux";
+import Loading from "./Loading";
 
 function Home() {
   const { data, isLoading, isSuccess } = useProductsQuery();
@@ -81,6 +82,7 @@ function Home() {
 
   return (
     <div className="container">
+      {isLoading && <Loading />}
       <div className="search-input">
         <input
           type="text"
@@ -95,7 +97,6 @@ function Home() {
 
       <Sort handleSort={handleSort} />
 
-      {isLoading && "Loading..."}
       <h2>Shopping Center</h2>
       <div className="products">
         {isSuccess &&
