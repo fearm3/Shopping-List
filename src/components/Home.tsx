@@ -1,13 +1,13 @@
 /* eslint-disable*/
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch } from "../app/hooks";
 
-import { addToCart } from "../features/product/productSlice";
+import { addToCart, Basket, getTotals } from "../features/product/productSlice";
 import Filter from "./Filter";
 import { useProductsQuery } from "../features/product/productsApi";
 import Sort from "./Sort";
 import "../css/Home.css";
-import Cart from "./Cart";
+import { useSelector } from "react-redux";
 
 function Home() {
   const { data, isLoading, isSuccess } = useProductsQuery();
@@ -15,7 +15,10 @@ function Home() {
   const [querry, SetQuerry] = useState("");
   const [sorted, setSorted] = useState("");
   const [state, setState] = useState<string[]>([]);
+  const [price, setPrice] = useState<Basket | null>(null);
+  const product = useSelector((state: any) => state.product);
   const dispatch = useAppDispatch();
+
   console.log("data", data);
   console.log("isSuccess", isSuccess);
 
@@ -40,6 +43,7 @@ function Home() {
         return state.includes(x.category);
       }
     })
+    //@ts-ignore
     .sort((a: any, b: any) => {
       if (sorted === "") {
         return true;
@@ -70,6 +74,10 @@ function Home() {
     // console.log("addToCart worked!!!", product);
     dispatch(addToCart(product));
   };
+
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [dispatch, product]);
 
   return (
     <div className="container">
